@@ -14,7 +14,6 @@ public class Servlet16 extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         Map<String, String> map = new HashMap<String, String>();
-
         Enumeration headerNames = request.getHeaderNames();
         while (headerNames.hasMoreElements()) {
             String key = (String) headerNames.nextElement();
@@ -25,10 +24,7 @@ public class Servlet16 extends HttpServlet {
         Set<String> heder = map.keySet();
         for (String key : heder) {
             response.getWriter().append(key).append(" : ").append(map.get(key)).append("\n");
-
         }
-
-
     }
 
 

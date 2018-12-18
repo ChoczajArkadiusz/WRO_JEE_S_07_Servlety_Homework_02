@@ -18,21 +18,22 @@ public class Servlet142 extends HttpServlet {
             "Samsung HT-J4100;800.99",
             "Alpine Swiss Dress Belt;99.08",
             "60 Watt LED;1.50",
-            "Arduino Nano;3.26",
-    };
+            "Arduino Nano;3.26"};
 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         response.setCharacterEncoding("UTF-8");
 
         String id = request.getParameter("id");
         int productId = Integer.parseInt(id);
-
-        if (productId >= 0  &&   productId < products.length) {
+        if (productId >= 0 && productId < products.length) {
             StringTokenizer st = new StringTokenizer(products[productId], ";");
             response.getWriter().append(st.nextToken()).append(" - ").append(st.nextToken());
         } else {
             response.getWriter().append("Product not found.");
         }
     }
+
+
 }

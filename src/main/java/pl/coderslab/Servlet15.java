@@ -28,6 +28,7 @@ public class Servlet15 extends HttpServlet {
         Collections.sort(numbers);
         response.getWriter().append("\nPosortowane liczby\n");
         response.getWriter().append(numbers.toString());
-
     }
+
+
 }

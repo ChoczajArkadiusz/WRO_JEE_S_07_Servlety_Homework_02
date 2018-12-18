@@ -14,23 +14,23 @@ import java.util.Scanner;
 public class Servlet13 extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         response.setCharacterEncoding("UTF-8");
         response.getWriter().append("Lista języków programowania, które wzorują się na paradygmacie obiektowym: \n\n");
 
         try {
-            String pathString  = getServletContext().getRealPath("oop.txt");
+            String pathString = getServletContext().getRealPath("oop.txt");
             Path path = Paths.get(pathString);
             Scanner scan = new Scanner(path);
             StringBuilder sb = new StringBuilder();
             while (scan.hasNextLine()) {
                 sb.append(scan.nextLine()).append("\n");
             }
-
             response.getWriter().append(sb.toString());
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
     }
+
+
 }

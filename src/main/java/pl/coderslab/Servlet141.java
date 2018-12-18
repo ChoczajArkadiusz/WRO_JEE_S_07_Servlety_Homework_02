@@ -12,7 +12,9 @@ import java.util.Scanner;
 
 @WebServlet(name = "Servlet141", urlPatterns = "/Servlet041")
 public class Servlet141 extends HttpServlet {
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
         response.setCharacterEncoding("UTF-8");
         response.setContentType("text/html");
         for (int i = 0; i <= 7; i++) {
@@ -21,7 +23,7 @@ public class Servlet141 extends HttpServlet {
             String end = "</a><br>";
             response.getWriter().append(link).append(name).append(end);
         }
-
-
     }
+
+
 }
